@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/drawerLayout"
+    tools:context=".Home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@mipmap/wallpaper">
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click on the icon to navigate "
+            android:gravity="center"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_food"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/food"
+
+                />
+
+            <TextView
+                android:id="@+id/txt_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Day"
+                android:layout_below="@+id/img_food"
+                android:layout_alignLeft="@+id/img_food"
+                android:textColor="@color/black"
+                android:paddingLeft="50dp"/>
+
+            <ImageView
+                android:id="@+id/img_mycaloories"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@mipmap/calories"
+                android:layout_toRightOf="@+id/img_food"
+                />
+
+
+            <TextView
+                android:id="@+id/txt_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My calories"
+                android:layout_below="@+id/img_food"
+                android:layout_alignLeft="@+id/img_mycaloories"
+                android:textColor="@color/black"
+                android:paddingLeft="50dp"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_plat"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@mipmap/plat"
+                android:layout_marginLeft="40dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_plat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meal"
+                android:layout_below="@+id/img_plat"
+                android:layout_alignLeft="@+id/img_plat"
+                android:textColor="@color/black"
+                android:paddingLeft="50dp"/>
+
+
+            <ImageView
+                android:id="@+id/img_shudule"
+                android:layout_marginLeft="20dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@mipmap/schud"
+                android:layout_toRightOf="@+id/img_plat"
+                />
+
+            <TextView
+                android:id="@+id/txt_schudle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="schedule"
+                android:layout_below="@+id/img_shudule"
+                android:layout_alignLeft="@+id/img_shudule"
+                android:textColor="@color/black"
+                android:paddingLeft="50dp"/>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+        <LinearLayout
+            android:id="@+id/layoutToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/blue"
+            android:orientation="horizontal"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageMenu"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_menu"
+                app:tint="@color/white"
+                android:layout_marginTop="10dp"></ImageView>
+
+
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/menu_app"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:id="@+id/sideNav"
+        app:headerLayout="@layout/app_bar_main"
+
+
+        >
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+    </FrameLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
